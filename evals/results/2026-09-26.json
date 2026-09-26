@@ -1,0 +1,896 @@
+{
+  "date": "2026-09-26",
+  "git_sha": "39a882c",
+  "model": "claude-opus-5",
+  "effort": "low",
+  "scores": {
+    "n": 25,
+    "tool_accuracy": 1.0,
+    "arg_accuracy": 1.0,
+    "fully_correct": 1.0
+  },
+  "cost_usd": 0.2043,
+  "max_usd": 0.4436,
+  "questions": 25,
+  "skipped": 0,
+  "results": [
+    {
+      "id": "re-01",
+      "status": "ok",
+      "question": "What's the housing market like in Austin right now?",
+      "expected_tool": "get_metro",
+      "tool": "get_metro",
+      "args": {
+        "metro": "austin-tx"
+      },
+      "all_tool_calls": [
+        {
+          "name": "get_metro",
+          "input": {
+            "metro": "austin-tx"
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "metro": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00762,
+      "usage": {
+        "input": 493,
+        "output": 67,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "re-02",
+      "status": "ok",
+      "question": "Show me how Miami home prices have trended month by month over the last three years.",
+      "expected_tool": "get_metro",
+      "tool": "get_metro",
+      "args": {
+        "metro": "Miami",
+        "include_series": true
+      },
+      "all_tool_calls": [
+        {
+          "name": "get_metro",
+          "input": {
+            "metro": "Miami",
+            "include_series": true
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "metro": true,
+        "include_series": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00834,
+      "usage": {
+        "input": 501,
+        "output": 94,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "re-03",
+      "status": "ok",
+      "question": "Compare Denver, Phoenix and Seattle on median sale price and rent.",
+      "expected_tool": "compare_metros",
+      "tool": "compare_metros",
+      "args": {
+        "metros": [
+          "Denver",
+          "Phoenix",
+          "Seattle"
+        ],
+        "metrics": [
+          "median_sale_price",
+          "zori"
+        ]
+      },
+      "all_tool_calls": [
+        {
+          "name": "compare_metros",
+          "input": {
+            "metros": [
+              "Denver",
+              "Phoenix",
+              "Seattle"
+            ],
+            "metrics": [
+              "median_sale_price",
+              "zori"
+            ]
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "metros": true,
+        "metrics": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00886,
+      "usage": {
+        "input": 505,
+        "output": 114,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "re-04",
+      "status": "ok",
+      "question": "Is Tampa or Orlando the better housing market for buyers right now? Put them side by side.",
+      "expected_tool": "compare_metros",
+      "tool": "compare_metros",
+      "args": {
+        "metros": [
+          "Tampa",
+          "Orlando"
+        ]
+      },
+      "all_tool_calls": [
+        {
+          "name": "compare_metros",
+          "input": {
+            "metros": [
+              "Tampa",
+              "Orlando"
+            ]
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "metros": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00783,
+      "usage": {
+        "input": 509,
+        "output": 72,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "re-05",
+      "status": "ok",
+      "question": "Which metros are currently hot housing markets?",
+      "expected_tool": "find_metros",
+      "tool": "find_metros",
+      "args": {
+        "temperature": [
+          "Hot"
+        ],
+        "limit": 20
+      },
+      "all_tool_calls": [
+        {
+          "name": "find_metros",
+          "input": {
+            "temperature": [
+              "Hot"
+            ],
+            "limit": 20
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "temperature": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00815,
+      "usage": {
+        "input": 493,
+        "output": 88,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "re-06",
+      "status": "ok",
+      "question": "Find metros where inventory is surging and prices are falling at the same time.",
+      "expected_tool": "find_metros",
+      "tool": "find_metros",
+      "args": {
+        "flags": [
+          "inventory_surge",
+          "price_decline"
+        ],
+        "limit": 50
+      },
+      "all_tool_calls": [
+        {
+          "name": "find_metros",
+          "input": {
+            "flags": [
+              "inventory_surge",
+              "price_decline"
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "flags": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00849,
+      "usage": {
+        "input": 501,
+        "output": 100,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "re-07",
+      "status": "ok",
+      "question": "What are the 5 metros with the biggest year-over-year increase in housing inventory?",
+      "expected_tool": "find_metros",
+      "tool": "find_metros",
+      "args": {
+        "sort_by": "inventory",
+        "sort_field": "yoy",
+        "limit": 5
+      },
+      "all_tool_calls": [
+        {
+          "name": "find_metros",
+          "input": {
+            "sort_by": "inventory",
+            "sort_field": "yoy",
+            "limit": 5
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "sort_by": true,
+        "sort_field": true,
+        "limit": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00874,
+      "usage": {
+        "input": 506,
+        "output": 109,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "re-08",
+      "status": "ok",
+      "question": "List buyer's markets where the median sale price is under $400,000.",
+      "expected_tool": "find_metros",
+      "tool": "find_metros",
+      "args": {
+        "market_type": [
+          "Buyer's market"
+        ],
+        "filters": [
+          {
+            "metric": "median_sale_price",
+            "op": "<",
+            "value": 400000
+          }
+        ],
+        "limit": 50
+      },
+      "all_tool_calls": [
+        {
+          "name": "find_metros",
+          "input": {
+            "market_type": [
+              "Buyer's market"
+            ],
+            "filters": [
+              {
+                "metric": "median_sale_price",
+                "op": "<",
+                "value": 400000
+              }
+            ],
+            "limit": 50
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "market_type": true,
+        "filters": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00913,
+      "usage": {
+        "input": 499,
+        "output": 126,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "re-09",
+      "status": "ok",
+      "question": "What would my monthly mortgage payment be on the median-priced home in Charlotte with 10% down?",
+      "expected_tool": "affordability",
+      "tool": "affordability",
+      "args": {
+        "metro": "Charlotte",
+        "down_payment_pct": 10
+      },
+      "all_tool_calls": [
+        {
+          "name": "affordability",
+          "input": {
+            "metro": "Charlotte",
+            "down_payment_pct": 10
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "metro": true,
+        "down_payment_pct": true,
+        "price": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00821,
+      "usage": {
+        "input": 511,
+        "output": 87,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "re-10",
+      "status": "ok",
+      "question": "If I buy a $400,000 house with nothing down at a 6.5% rate on a 30-year loan, what's the monthly payment?",
+      "expected_tool": "affordability",
+      "tool": "affordability",
+      "args": {
+        "price": 400000,
+        "down_payment_pct": 0,
+        "rate": 6.5,
+        "term_years": 30
+      },
+      "all_tool_calls": [
+        {
+          "name": "affordability",
+          "input": {
+            "price": 400000,
+            "down_payment_pct": 0,
+            "rate": 6.5,
+            "term_years": 30
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "price": true,
+        "rate": true,
+        "down_payment_pct": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00914,
+      "usage": {
+        "input": 522,
+        "output": 122,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "mac-01",
+      "status": "ok",
+      "question": "What's the latest CPI inflation reading, and how has it moved over the past two years?",
+      "expected_tool": "get_indicator",
+      "tool": "get_indicator",
+      "args": {
+        "indicator": "cpi",
+        "range": "2y"
+      },
+      "all_tool_calls": [
+        {
+          "name": "get_indicator",
+          "input": {
+            "indicator": "cpi",
+            "range": "2y"
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "indicator": true,
+        "range": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00818,
+      "usage": {
+        "input": 505,
+        "output": 87,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "mac-02",
+      "status": "ok",
+      "question": "Give me a rundown of all the labor market indicators.",
+      "expected_tool": "get_indicators",
+      "tool": "get_indicators",
+      "args": {
+        "group": "labor"
+      },
+      "all_tool_calls": [
+        {
+          "name": "get_indicators",
+          "input": {
+            "group": "labor"
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "group": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00754,
+      "usage": {
+        "input": 496,
+        "output": 63,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "mac-03",
+      "status": "ok",
+      "question": "How is the U.S. economy doing overall right now?",
+      "expected_tool": "get_indicators",
+      "tool": "get_indicators",
+      "args": {},
+      "all_tool_calls": [
+        {
+          "name": "get_indicators",
+          "input": {}
+        },
+        {
+          "name": "get_fomc",
+          "input": {}
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "group": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00768,
+      "usage": {
+        "input": 495,
+        "output": 69,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "mac-04",
+      "status": "ok",
+      "question": "Show me the unemployment rate since January 2025.",
+      "expected_tool": "get_indicator",
+      "tool": "get_indicator",
+      "args": {
+        "indicator": "unrate",
+        "start": "2025-01-01"
+      },
+      "all_tool_calls": [
+        {
+          "name": "get_indicator",
+          "input": {
+            "indicator": "unrate",
+            "start": "2025-01-01"
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "indicator": true,
+        "start": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00818,
+      "usage": {
+        "input": 495,
+        "output": 89,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "mac-05",
+      "status": "ok",
+      "question": "What did the Fed decide at its last meeting, and did the statement sound more hawkish or dovish?",
+      "expected_tool": "get_fomc",
+      "tool": "get_fomc",
+      "args": {},
+      "all_tool_calls": [
+        {
+          "name": "get_fomc",
+          "input": {}
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {},
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00714,
+      "usage": {
+        "input": 511,
+        "output": 44,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "mac-06",
+      "status": "ok",
+      "question": "What economic data releases are coming out over the next week?",
+      "expected_tool": "upcoming_releases",
+      "tool": "upcoming_releases",
+      "args": {
+        "days": 7
+      },
+      "all_tool_calls": [
+        {
+          "name": "upcoming_releases",
+          "input": {
+            "days": 7
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "days": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00723,
+      "usage": {
+        "input": 494,
+        "output": 51,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "gr-01",
+      "status": "ok",
+      "question": "Find federal contracts about cloud migration with a fit score of at least 80.",
+      "expected_tool": "search_opportunities",
+      "tool": "search_opportunities",
+      "args": {
+        "query": "cloud migration",
+        "min_fit": 80,
+        "source": "sam"
+      },
+      "all_tool_calls": [
+        {
+          "name": "search_opportunities",
+          "input": {
+            "query": "cloud migration",
+            "min_fit": 80,
+            "source": "sam"
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "query": true,
+        "min_fit": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.0088,
+      "usage": {
+        "input": 503,
+        "output": 112,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "gr-02",
+      "status": "ok",
+      "question": "Which grant or contract opportunities close within the next two weeks?",
+      "expected_tool": "search_opportunities",
+      "tool": "search_opportunities",
+      "args": {
+        "closing_within_days": 14,
+        "sort": "deadline",
+        "limit": 50
+      },
+      "all_tool_calls": [
+        {
+          "name": "search_opportunities",
+          "input": {
+            "closing_within_days": 14,
+            "sort": "deadline",
+            "limit": 50
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "closing_within_days": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00888,
+      "usage": {
+        "input": 499,
+        "output": 116,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "gr-03",
+      "status": "ok",
+      "question": "Show me the Grants.gov grants the agent recommends we pursue.",
+      "expected_tool": "search_opportunities",
+      "tool": "search_opportunities",
+      "args": {
+        "source": "grants_gov",
+        "recommendation": [
+          "Pursue"
+        ],
+        "limit": 25
+      },
+      "all_tool_calls": [
+        {
+          "name": "search_opportunities",
+          "input": {
+            "source": "grants_gov",
+            "recommendation": [
+              "Pursue"
+            ],
+            "limit": 25
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "source": true,
+        "recommendation": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00909,
+      "usage": {
+        "input": 502,
+        "output": 124,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "gr-04",
+      "status": "ok",
+      "question": "Are there any total small business set-aside opportunities from Veterans Affairs?",
+      "expected_tool": "search_opportunities",
+      "tool": "search_opportunities",
+      "args": {
+        "query": "Veterans Affairs",
+        "set_aside": "total_small_business",
+        "limit": 10
+      },
+      "all_tool_calls": [
+        {
+          "name": "search_opportunities",
+          "input": {
+            "query": "Veterans Affairs",
+            "set_aside": "total_small_business",
+            "limit": 10
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "set_aside": true,
+        "query": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00888,
+      "usage": {
+        "input": 504,
+        "output": 115,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "gr-05",
+      "status": "ok",
+      "question": "Tell me more about opportunity sam:174ece4d5472af1e48b258187156fd65 \u2014 what are the risks and next steps?",
+      "expected_tool": "get_opportunity",
+      "tool": "get_opportunity",
+      "args": {
+        "id": "sam:174ece4d5472af1e48b258187156fd65"
+      },
+      "all_tool_calls": [
+        {
+          "name": "get_opportunity",
+          "input": {
+            "id": "sam:174ece4d5472af1e48b258187156fd65"
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "id": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00784,
+      "usage": {
+        "input": 522,
+        "output": 70,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "rp-01",
+      "status": "ok",
+      "question": "How healthy are my GitHub repos overall?",
+      "expected_tool": "get_repo_health",
+      "tool": "get_repo_health",
+      "args": {},
+      "all_tool_calls": [
+        {
+          "name": "get_repo_health",
+          "input": {}
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "repo": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00723,
+      "usage": {
+        "input": 494,
+        "output": 51,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "rp-02",
+      "status": "ok",
+      "question": "What's the health score for agents-hub, and is a changelog ready for its next release?",
+      "expected_tool": "get_repo_health",
+      "tool": "get_repo_health",
+      "args": {
+        "repo": "agents-hub"
+      },
+      "all_tool_calls": [
+        {
+          "name": "get_repo_health",
+          "input": {
+            "repo": "agents-hub"
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "repo": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00763,
+      "usage": {
+        "input": 504,
+        "output": 65,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "rp-03",
+      "status": "ok",
+      "question": "Which issues need triage right now? Only show p1 bugs.",
+      "expected_tool": "get_triage_queue",
+      "tool": "get_triage_queue",
+      "args": {
+        "classification": [
+          "bug"
+        ],
+        "priority": [
+          "p1"
+        ]
+      },
+      "all_tool_calls": [
+        {
+          "name": "get_triage_queue",
+          "input": {
+            "classification": [
+              "bug"
+            ],
+            "priority": [
+              "p1"
+            ]
+          }
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {
+        "priority": true,
+        "classification": true
+      },
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00855,
+      "usage": {
+        "input": 499,
+        "output": 103,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    },
+    {
+      "id": "ov-01",
+      "status": "ok",
+      "question": "What data agents do you have access to, and when did each one last run?",
+      "expected_tool": "list_agents",
+      "tool": "list_agents",
+      "args": {},
+      "all_tool_calls": [
+        {
+          "name": "list_agents",
+          "input": {}
+        }
+      ],
+      "tool_correct": true,
+      "arg_checks": {},
+      "arg_score": 1.0,
+      "fully_correct": true,
+      "cost_usd": 0.00694,
+      "usage": {
+        "input": 497,
+        "output": 39,
+        "cache_write": 0,
+        "cache_read": 6966
+      }
+    }
+  ]
+}

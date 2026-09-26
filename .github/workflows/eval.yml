@@ -1,0 +1,51 @@
+name: Tool-selection eval
+
+# Calls the Anthropic API, so it only runs when started by hand.
+on:
+  workflow_dispatch:
+    inputs:
+      model:
+        description: Claude model acting as the MCP client
+        default: claude-opus-5
+      max_usd:
+        description: Hard spend cap for this run (USD)
+        default: "0.50"
+      commit_results:
+        description: Commit evals/results and evals/history.jsonl back to the branch
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+          enable-cache: true
+      - run: uv sync --locked --group evals
+      - name: Run eval
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          AGENTS_ANTHROPIC_API_KEY: ${{ secrets.AGENTS_ANTHROPIC_API_KEY }}
+        run: >-
+          uv run --group evals python -m evals.run_eval
+          --model "${{ inputs.model }}" --max-usd "${{ inputs.max_usd }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: eval-results
+          path: |
+            evals/results/
+            evals/history.jsonl
+      - name: Commit results
+        if: ${{ inputs.commit_results }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add evals/results evals/history.jsonl
+          git diff --cached --quiet || git commit -m "eval: ${{ inputs.model }} results"
+          git push
